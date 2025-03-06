@@ -1,9 +1,10 @@
-import { Instrument_Sans, InstrumentSans } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
-// const InstrumentSans = Instrument_Sans({
-// 	variable: [],
-// });
+const instrumentSans = Instrument_Sans({
+	subsets: ["latin"],
+	variable: "--font-instrument-sans",
+});
 
 export const metadata = {
 	title: "brainfumble",
@@ -12,8 +13,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
-			<body className={` antialiased`}>{children}</body>
+		<html lang="en" className={instrumentSans.variable}>
+			<body className="font-sans antialiased">{children}</body>
 		</html>
 	);
 }
